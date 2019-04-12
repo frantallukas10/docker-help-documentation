@@ -1,7 +1,7 @@
 # DOCKER DOCUMENTATION
 
 ## DOCKER BASICS
-### COMMANDs
+### COMMANDS
 1. `docker` - show options and management commands<br>
 2. `docker search [name]` - we search the docker container images in registry server from the terminal<br>
 3. `docker --version` - show docker version info<br>
