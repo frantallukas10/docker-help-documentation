@@ -97,8 +97,8 @@ Alpine is a very small Linux distro good for docker (use sh because it does not 
 `docker container attach [CONTAINER_NAME or CONTAINER ID]` - start attach local standard input, output, and error streams to a running container, we can ping another container via ip adress or CONTAINER_NAME (for example `ping -c 2 [CONTAINER_NAME or IP_ADDRESS]`)<br>
 
 ### NETWORK TUTORIALS
-- (tutorial BRIDGE)[https://docs.docker.com/network/network-tutorial-standalone/]<br>
+- [tutorial BRIDGE](https://docs.docker.com/network/network-tutorial-standalone/)<br>
   Everything what is connect with bridge it has acces on internet. If you not specify driver default is bridge<br>
-- (tutorial HOST)[https://docs.docker.com/network/network-tutorial-host/]<br>
-  The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server. `docker run -d -p 8080:80 --name my_web_server nginx` after that you can use this link (http://localhost:8080/.)[http://localhost:8080/.]
+- [tutorial HOST](https://docs.docker.com/network/network-tutorial-host/)<br>
+  The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server. `docker run -d -p 8080:80 --name my_web_server nginx` after that you can use this link [http://localhost:8080/.](http://localhost:8080/.)
   
