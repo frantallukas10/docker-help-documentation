@@ -96,7 +96,7 @@ Alpine is a very small Linux distro good for docker (use sh because it does not 
 `docker container run -d --name [NAME] --network [NETWORK_NAME] [IMAGE_NAME]` - Create container on network<br>
 `docker container attach [CONTAINER_NAME or CONTAINER ID]` - start attach local standard input, output, and error streams to a running container, we can ping another container via ip adress or CONTAINER_NAME (for example `ping -c 2 [CONTAINER_NAME or IP_ADDRESS]`)<br>
 
-### NETWORK TUTORIALs
+### NETWORK TUTORIALS
 - (tutorial BRIDGE)[https://docs.docker.com/network/network-tutorial-standalone/]<br>
   Everything what is connect with bridge it has acces on internet. If you not specify driver default is bridge<br>
 - (tutorial HOST)[https://docs.docker.com/network/network-tutorial-host/]<br>
