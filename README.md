@@ -101,4 +101,25 @@ Alpine is a very small Linux distro good for docker (use sh because it does not 
   Everything what is connect with bridge it has acces on internet. If you not specify driver default is bridge<br>
 - [tutorial HOST](https://docs.docker.com/network/network-tutorial-host/)<br>
   The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server. `docker run -d -p 8080:80 --name my_web_server nginx` after that you can use this link [http://localhost:8080/.](http://localhost:8080/.)
+
+## IMAGE TAGGING & PUSHING TO DOCKERHUB
+### tags are labels that point ot an image ID
+- `docker image tag nginx test/nginx` - Retag existing image<br>
+- `docker image push test/nginx` - Upload to dockerhub
+- If denied, do `docker login`
   
+### DOCKERFILE CONFIGURATION
+- FROM - The os used. Common is alpine, debian, ubuntu or another images... [https://hub.docker.com/search?&q=](https://hub.docker.com/search?&q=)
+- ENV - Environment variables
+- RUN - Run commands/shell scripts, etc
+- EXPOSE - Ports to expose
+- CMD - Final command run when you launch a new container from image
+- WORKDIR - Sets working directory (also could use 'RUN cd /some/path')
+- COPY - Copies files from host to container
+
+
+- MAINTAINER - who create docker `MAINTAINER name surname <mail@gmail.com>`<br>
+- VOLUME - we cen define path for sharing data to container or containers, we don't have to rebuild image after changes
+
+### Build image from dockerfile (reponame can be whatever)
+### From the same directory as Dockerfile
