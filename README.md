@@ -12,7 +12,10 @@
 - docker inspect -f '{{.Config.Image}}' [CONTAINER_NAME_or_CONTAINER_ID] - show name Image for container
 - docker inspect -f '{{.RepoTags}}' [IMAGE_NAME] - show version image
 
-## WORKING WITH IMAGES
+## ABOUT IMAGES
+Images are app binaries and dependencies with metadata about the image data and how to run the image<br>
+Images are no complete OS. No kernel, kernel modules (drivers)<br>
+The host provides the kernel, big difference between VM<br>
 
 ### COMMANDS:
 - docker images --help - show help for manage images
@@ -22,13 +25,18 @@
 - docker image rm [IMAGE_NAME] or docker rmi [IMAGE_NAME] - remove image
 - docker rmi $(docker images -aq) - remove all images
 
-## ABOUT IMAGES
-Images are app binaries and dependencies with metadata about the image data and how to run the image<br>
-Images are no complete OS. No kernel, kernel modules (drivers)<br>
-The host provides the kernel, big difference between VM<br>
+## ABOUT CONTAINERS
+Docker containers are often compared to virtual machines but they are actually just processes running on your host os. In Windows/Mac,
+Docker runs in a mini-VM so to see the processes you'll need to connect directly to that. On Linux however, you can run "ps aux" and see the processes directly
 
-
-## WORKING WITH CONTAINERS
+## HOW RUN DOCKER CONTAINER WORKS?
+First looked for an image called nginx in the image cache<br>
+If not found in the cache, it looks to the default image repo on Dockerhub<br>
+Pulled it down (latest version), stored in the image cache<br>
+Started it in a new container<br>
+We specified to take port 80- on the host and forward to port 80 on the container<br>
+We could do - docker container run --publish 8000:80 --detach nginx to use port 8000<br>
+We can specify versions like -  docker container run --publish 8000:80 --detach nginx:1.09<br>
 
 ### COMMANDS:
 - docker container --help - show help for manage containers
@@ -52,19 +60,6 @@ The host provides the kernel, big difference between VM<br>
 - docker container logs [CONTAINER_NAME_or_CONTAINER_ID] - show all logs
 - docker container logs --tail=1 [CONTAINER_NAME_or_CONTAINER_ID] - show custom count logs
 - docker container top [CONTAINER_NAME_or_CONTAINER_ID] - show list processes running in the container
-
-## ABOUT CONTAINERS
-Docker containers are often compared to virtual machines but they are actually just processes running on your host os. In Windows/Mac,
-Docker runs in a mini-VM so to see the processes you'll need to connect directly to that. On Linux however, you can run "ps aux" and see the processes directly
-
-## HOW RUN DOCKER CONTAINER WORKS?
-First looked for an image called nginx in the image cache<br>
-If not found in the cache, it looks to the default image repo on Dockerhub<br>
-Pulled it down (latest version), stored in the image cache<br>
-Started it in a new container<br>
-We specified to take port 80- on the host and forward to port 80 on the container<br>
-We could do - docker container run --publish 8000:80 --detach nginx to use port 8000<br>
-We can specify versions like -  docker container run --publish 8000:80 --detach nginx:1.09<br>
 
 ## NETWORKING
 "bridge" or "host" or "none" is the default network
@@ -166,5 +161,5 @@ Bind mounts may be stored anywhere on the host system. They may even be importan
 - docker exec -it [CONTINAR_ID or CONTAINER_NAME] ping -w3 google.com
 
 Best management solution for Docker
-Portainer
-setup portainer
+[Portainer](https://www.portainer.io/overview/)
+[setup portainer](https://www.portainer.io/installation/)
