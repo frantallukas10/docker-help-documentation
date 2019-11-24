@@ -163,3 +163,9 @@ Bind mounts may be stored anywhere on the host system. They may even be importan
 Best management solution for Docker
 [Portainer](https://www.portainer.io/overview/)
 [setup portainer](https://www.portainer.io/installation/)
+
+run portainer for windows
+```bash
+docker volume create portainer_data
+docker run -d -p 9000:9000 -v //var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --name portainer portainer/portainer
+```
